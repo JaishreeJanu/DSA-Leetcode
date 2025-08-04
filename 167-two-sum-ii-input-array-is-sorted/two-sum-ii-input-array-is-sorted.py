@@ -1,14 +1,18 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
 
-        numb_hash = {}
+        # Using two pointers
 
-        for ind,number in enumerate(numbers):
-            search_num = target - number
-            if search_num in numb_hash:
-                return [numb_hash[search_num]+1, ind+1]
-            
-            numb_hash[number] = ind
+        i = 0
+        j = len(numbers) - 1
+
+        while i<j:
+            if numbers[i]+numbers[j] == target:
+                return[i+1,j+1]
+            elif numbers[i]+numbers[j] > target:
+                j -= 1
+            else:
+                i += 1
 
         
 

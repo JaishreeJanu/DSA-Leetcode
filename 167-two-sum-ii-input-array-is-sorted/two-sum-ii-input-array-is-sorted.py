@@ -5,9 +5,9 @@ class Solution:
 
         for ind,number in enumerate(numbers):
             search_num = target - number
-            if search_num in numb_hash.keys():
+            if search_num in numb_hash:
                 return (numb_hash[search_num]+1, ind+1)
-            if number not in numb_hash.keys():
+            if number not in numb_hash:
                 numb_hash[number] = ind
 
         

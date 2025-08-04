@@ -7,9 +7,10 @@ class Solution:
         j = len(numbers) - 1
 
         while i<j:
-            if numbers[i]+numbers[j] == target:
+            s = numbers[i]+numbers[j]
+            if s == target:
                 return[i+1,j+1]
-            elif numbers[i]+numbers[j] > target:
+            elif s > target:
                 j -= 1
             else:
                 i += 1
